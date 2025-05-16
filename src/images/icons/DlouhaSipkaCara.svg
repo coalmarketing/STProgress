@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Vrstva_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 917.78">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: url(#Nepojmenovaný_přechod_7);
+        stroke-miterlimit: 10;
+        stroke-width: 6px;
+      }
+
+      .cls-2 {
+        fill: #c31f26;
+      }
+    </style>
+    <linearGradient id="Nepojmenovaný_přechod_7" data-name="Nepojmenovaný přechod 7" x1="20" y1="0" x2="20" y2="883.13" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".26" stop-color="#c31f26"/>
+    </linearGradient>
+  </defs>
+  <polygon class="cls-2" points="20 917.78 40 883.13 0 883.13 20 917.78"/>
+  <line class="cls-1" x1="20" y1="883.13" x2="20"/>
+</svg>
