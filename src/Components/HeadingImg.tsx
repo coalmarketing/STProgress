@@ -14,7 +14,7 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
     return (
         <Flex
             w="100%"
-            minHeight="200px"
+            minHeight={{ base: "200px", md: "300px", xl: "400px" }}
             justify="center"
             align="center"
             backgroundImage={!videoSrc && !gifSrc ? `url(${img})` : "none"}

@@ -17,6 +17,8 @@ import montaz4 from "../images/photos/webp/montaz_04.webp";
 import montaz5 from "../images/photos/webp/montaz_05.webp";
 import montaz6 from "../images/photos/webp/montaz_06.webp";
 
+import montazVideoMp4 from "../video/07.mp4";
+import montazVideoWebm from "../video/07.webm";
 
 const HallAssembly = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -95,7 +97,14 @@ const HallAssembly = () => {
 
     return (
         <Flex w="100%" direction="column" alignItems="center">
-            <HeadingImg img={headerPicture} titleText="MONTÁŽ HALY" />
+            <HeadingImg 
+                img={headerPicture} 
+                titleText="MONTÁŽ HALY" 
+                videoSrc={{
+                    webm: montazVideoWebm,
+                    mp4: montazVideoMp4
+                }}
+            />
             <Flex w="80%" direction="column">
                 <KeyFeatures headingText={<Text>NA MONTÁŽ HALY<br></br>JSME TI PRAVÍ...</Text>} features={features} />
                 <ProjectCard
