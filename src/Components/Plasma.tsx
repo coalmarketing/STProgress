@@ -83,28 +83,28 @@ const Plasma = () => {
               <Image
                 src={img1}
                 alt="Product 1"
-                w="25%"
+                w={{ base: "100%", md: "25%" }}
                 height="400px"
                 objectFit="cover"
               />
               <Image
                 src={img2}
                 alt="Product 2"
-                w="25%"
+                w={{ base: "100%", md: "25%" }}
                 height="400px"
                 objectFit="cover"
               />
               <Image
                 src={img3}
                 alt="Product 3"
-                w="25%"
+                w={{ base: "100%", md: "25%" }}
                 height="400px"
                 objectFit="cover"
               />
               <Image
                 src={img4}
                 alt="Product 4"
-                w="25%"
+                w={{ base: "100%", md: "25%" }}
                 height="400px"
                 objectFit="cover"
               />
@@ -113,28 +113,28 @@ const Plasma = () => {
               <Image
                 src={img1}
                 alt="Product 1"
-                w="25%"
+                w={{ base: "100%", md: "25%" }}
                 height="400px"
                 objectFit="cover"
               />
               <Image
                 src={img2}
                 alt="Product 2"
-                w="25%"
+                w={{ base: "100%", md: "25%" }} 
                 height="400px"
                 objectFit="cover"
               />
               <Image
                 src={img3}
                 alt="Product 3"
-                w="25%"
+                w={{ base: "100%", md: "25%" }}
                 height="400px"
                 objectFit="cover"
               />
               <Image
                 src={img4}
                 alt="Product 4"
-                w="25%"
+                w={{ base: "100%", md: "25%" }}
                 height="400px"
                 objectFit="cover"
               />

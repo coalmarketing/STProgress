@@ -56,17 +56,17 @@ const BuildBlocks = () => {
                             }
                         }}
                     >
-                        <Flex w="50%">
-                            <Image src={img1} alt="Product 1" w="25%" height="400px" objectFit="cover" />
-                            <Image src={img2} alt="Product 2" w="25%" height="400px" objectFit="cover" />
-                            <Image src={img3} alt="Product 3" w="25%" height="400px" objectFit="cover" />
-                            <Image src={img4} alt="Product 4" w="25%" height="400px" objectFit="cover" />
+                        <Flex w={{ base: "100%", md: "50%" }}>
+                            <Image src={img1} alt="Product 1" w="100%" height="400px" objectFit="cover" />
+                            <Image src={img2} alt="Product 2" w="100%" height="400px" objectFit="cover" />
+                            <Image src={img3} alt="Product 3" w="100%" height="400px" objectFit="cover" />
+                            <Image src={img4} alt="Product 4" w="100%" height="400px" objectFit="cover" />
                         </Flex>
-                        <Flex w="50%">
-                            <Image src={img1} alt="Product 1" w="25%" height="400px" objectFit="cover" />
-                            <Image src={img2} alt="Product 2" w="25%" height="400px" objectFit="cover" />
-                            <Image src={img3} alt="Product 3" w="25%" height="400px" objectFit="cover" />
-                            <Image src={img4} alt="Product 4" w="25%" height="400px" objectFit="cover" />
+                        <Flex w={{ base: "100%", md: "50%" }}>
+                            <Image src={img1} alt="Product 1" w="100%" height="400px" objectFit="cover" />
+                            <Image src={img2} alt="Product 2" w="100%" height="400px" objectFit="cover" />
+                            <Image src={img3} alt="Product 3" w="100%" height="400px" objectFit="cover" />
+                            <Image src={img4} alt="Product 4" w="100%" height="400px" objectFit="cover" />
                         </Flex>
                     </Flex>
                 </Box>
