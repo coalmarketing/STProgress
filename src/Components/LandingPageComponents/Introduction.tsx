@@ -5,7 +5,6 @@ import {
   Spacer,
   useMediaQuery,
 } from "@chakra-ui/react";
-import landingHeader from "../../images/photos/webp/landing-page.webp";
 import CustomBtn from "../CustomBtn";
 import { EButtonStyle } from "../../models/IModels.model";
 import Arrow from "../Arrow/Arrow";

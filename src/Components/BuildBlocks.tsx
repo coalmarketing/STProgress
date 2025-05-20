@@ -12,7 +12,6 @@ import img1 from "../images/photos/webp/galerie_bunky_01.webp";
 import img2 from "../images/photos/webp/galerie_bunky_02.webp";
 import img3 from "../images/photos/webp/galerie_bunky_03.webp";
 import img4 from "../images/photos/webp/galerie_bunky_04.webp";
-import img5 from "../images/photos/webp/galerie_bunky_05.webp";
 
 const BuildBlocks = () => {
     const features = [

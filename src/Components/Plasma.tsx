@@ -13,7 +13,6 @@ import img1 from "../images/photos/webp/galerie_paleni_01.webp";
 import img2 from "../images/photos/webp/galerie_paleni_02.webp";
 import img3 from "../images/photos/webp/galerie_paleni_03.webp";
 import img4 from "../images/photos/webp/galerie_paleni_04.webp";
-import img5 from "../images/photos/webp/vyrobek_06.webp";
 
 const Plasma = () => {
   const features = [
