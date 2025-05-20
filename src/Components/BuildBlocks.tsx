@@ -6,7 +6,7 @@ import flameIcon from "../images/icons/flame.svg";
 import boltIcon from "../images/icons/bolt.svg";
 import KeyFeatures from "./KeyFeatures";
 import bunkyVideoMp4 from "../video/bunky1.mp4";
-import bunkyVideoWebm from "../video/bunky1.webm";
+import bunkyVideoWebm from "../video/bunky1_low.webm";
 
 import img1 from "../images/photos/webp/galerie_bunky_01.webp";
 import img2 from "../images/photos/webp/galerie_bunky_02.webp";

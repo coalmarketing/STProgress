@@ -9,7 +9,7 @@ import CustomBtn from "../CustomBtn";
 import { EButtonStyle } from "../../models/IModels.model";
 import Arrow from "../Arrow/Arrow";
 import bunka2VideoMp4 from "../../video/Bunka2.mp4";
-import bunka2VideoWebm from "../../video/Bunka2.webm";
+import bunka2VideoWebm from "../../video/Bunka2_low.webm";
 
 const Introduction = () => {
   const [hidePcIcon] = useMediaQuery("(max-width: 410px)");
