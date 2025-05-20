@@ -14,7 +14,6 @@
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
-    "@netlify/plugin-nextjs": "^5.11.1",
     "@react-google-maps/api": "^2.20.3",
     "framer-motion": "^11.3.21",
     "i18next": "^23.12.2",
