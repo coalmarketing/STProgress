@@ -1,7 +1,7 @@
-import { Text, Flex, useDisclosure, useMediaQuery } from "@chakra-ui/react";
+import { Text, Flex, useDisclosure } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import HeadingImg from "./HeadingImg";
-import headerPicture from "../images/photos/webp/header_static.webp";
+import headerPicture from "../images/photos/webp/header_static.webp";   
 import hallIcon from "../images/icons/hall.svg";
 import clockIcon from "../images/icons/clock.svg";
 import lockIcon from "../images/icons/lock.svg";
@@ -22,7 +22,6 @@ import montazVideoWebm from "../video/07.webm";
 
 const HallAssembly = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [isMobile] = useMediaQuery("(max-width: 768px)");
     const [selectedImage, setSelectedImage] = useState("");
 
     const handleImageClick = (src: string) => {

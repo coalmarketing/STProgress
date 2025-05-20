@@ -1,4 +1,4 @@
-import { Text, Flex, Image, Heading, Box, useMediaQuery } from "@chakra-ui/react";
+import { Text, Flex, Image, Heading, Box } from "@chakra-ui/react";
 import HeadingImg from "./HeadingImg";
 import headerPicture from "../images/photos/webp/header_paleni.webp";
 import plasma from "../images/photos/plazma.png";
@@ -15,7 +15,6 @@ import img3 from "../images/photos/webp/galerie_paleni_03.webp";
 import img4 from "../images/photos/webp/galerie_paleni_04.webp";
 
 const Plasma = () => {
-  const [isMobile] = useMediaQuery("(max-width: 768px)");
   const features = [
     {
       icon: brickIcon,
