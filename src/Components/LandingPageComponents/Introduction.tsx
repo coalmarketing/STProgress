@@ -4,16 +4,19 @@ import {
   Heading,
   Spacer,
   useMediaQuery,
+  Image,
 } from "@chakra-ui/react";
 import CustomBtn from "../CustomBtn";
 import { EButtonStyle } from "../../models/IModels.model";
 import Arrow from "../Arrow/Arrow";
 import bunka2VideoMp4 from "../../video/Bunka2.mp4";
 import bunka2VideoWebm from "../../video/Bunka2_low.webm";
+import fallbackImage from "../../images/photos/webp/landing-page.webp";
 
 const Introduction = () => {
   const [hidePcIcon] = useMediaQuery("(max-width: 410px)");
   const [showPcIcon] = useMediaQuery("(max-width: 395px)");
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
   return (
     <Flex
       width="100%"
@@ -42,22 +45,34 @@ const Introduction = () => {
           zIndex: 1,
         }}
       >
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            filter: "brightness(0.7)",
-          }}
-        >
-          <source src={bunka2VideoWebm} type="video/webm" />
-          <source src={bunka2VideoMp4} type="video/mp4" />
-        </video>
+        {isMobile ? (
+          <Image
+            src={fallbackImage}
+            alt="STProgress"
+            position="absolute"
+            width="100%"
+            height="100%"
+            objectFit="cover"
+            filter="brightness(0.7)"
+          />
+        ) : (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              filter: "brightness(0.7)",
+            }}
+          >
+            <source src={bunka2VideoWebm} type="video/webm" />
+            <source src={bunka2VideoMp4} type="video/mp4" />
+          </video>
+        )}
          <Heading
           width="80%"
           fontSize="clamp(25px, 10vw, 200px)" // Dynamické nastavení velikosti

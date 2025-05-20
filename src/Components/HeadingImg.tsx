@@ -1,4 +1,4 @@
-import { Flex, Heading, Box } from "@chakra-ui/react";
+import { Flex, Heading, Box, useMediaQuery } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 interface IProps {
@@ -13,9 +13,10 @@ interface IProps {
 
 const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
     const [isVideoVisible, setIsVideoVisible] = useState(false);
+    const [isMobile] = useMediaQuery("(max-width: 768px)");
 
     useEffect(() => {
-        if (videoSrc) {
+        if (videoSrc && !isMobile) {
             const observer = new IntersectionObserver(
                 (entries) => {
                     entries.forEach((entry) => {
@@ -35,7 +36,7 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
 
             return () => observer.disconnect();
         }
-    }, [videoSrc]);
+    }, [videoSrc, isMobile]);
 
     return (
         <Flex
@@ -66,7 +67,7 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
                     }}
                     alt="Background"
                 />
-            ) : videoSrc && isVideoVisible ? (
+            ) : videoSrc && isVideoVisible && !isMobile ? (
                 <video
                     style={{
                         position: "absolute",
@@ -90,6 +91,21 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
                     <source src={videoSrc.mp4} type="video/mp4" />
                     Váš prohlížeč nepodporuje přehrávání videa.
                 </video>
+            ) : videoSrc && isMobile ? (
+                <img
+                    src={img}
+                    loading="lazy"
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                        zIndex: 0
+                    }}
+                    alt="Background"
+                />
             ) : null}
             <Box
                 position="absolute"

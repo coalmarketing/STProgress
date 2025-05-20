@@ -1,4 +1,4 @@
-import { Text, Flex, Image, Heading, Box } from "@chakra-ui/react";
+import { Text, Flex, Image, Heading, Box, useMediaQuery } from "@chakra-ui/react";
 import HeadingImg from "./HeadingImg";
 import headerPicture from "../images/photos/webp/header_paleni.webp";
 import plasma from "../images/photos/plazma.png";
@@ -15,6 +15,7 @@ import img3 from "../images/photos/webp/galerie_paleni_03.webp";
 import img4 from "../images/photos/webp/galerie_paleni_04.webp";
 
 const Plasma = () => {
+  const [isMobile] = useMediaQuery("(max-width: 768px)");
   const features = [
     {
       icon: brickIcon,
@@ -79,65 +80,17 @@ const Plasma = () => {
               }
             }}
           >
-            <Flex w="50%">
-              <Image
-                src={img1}
-                alt="Product 1"
-                w={{ base: "100%", md: "25%" }}
-                height="400px"
-                objectFit="cover"
-              />
-              <Image
-                src={img2}
-                alt="Product 2"
-                w={{ base: "100%", md: "25%" }}
-                height="400px"
-                objectFit="cover"
-              />
-              <Image
-                src={img3}
-                alt="Product 3"
-                w={{ base: "100%", md: "25%" }}
-                height="400px"
-                objectFit="cover"
-              />
-              <Image
-                src={img4}
-                alt="Product 4"
-                w={{ base: "100%", md: "25%" }}
-                height="400px"
-                objectFit="cover"
-              />
+            <Flex w={{ base: "100%", md: "50%" }}>
+              <Image src={img1} alt="Product 1" w="100%" height="400px" objectFit="cover" />
+              <Image src={img2} alt="Product 2" w="100%" height="400px" objectFit="cover" />
+              <Image src={img3} alt="Product 3" w="100%" height="400px" objectFit="cover" />
+              <Image src={img4} alt="Product 4" w="100%" height="400px" objectFit="cover" />
             </Flex>
-            <Flex w="50%">
-              <Image
-                src={img1}
-                alt="Product 1"
-                w={{ base: "100%", md: "25%" }}
-                height="400px"
-                objectFit="cover"
-              />
-              <Image
-                src={img2}
-                alt="Product 2"
-                w={{ base: "100%", md: "25%" }} 
-                height="400px"
-                objectFit="cover"
-              />
-              <Image
-                src={img3}
-                alt="Product 3"
-                w={{ base: "100%", md: "25%" }}
-                height="400px"
-                objectFit="cover"
-              />
-              <Image
-                src={img4}
-                alt="Product 4"
-                w={{ base: "100%", md: "25%" }}
-                height="400px"
-                objectFit="cover"
-              />
+            <Flex w={{ base: "100%", md: "50%" }}>
+              <Image src={img1} alt="Product 1" w="100%" height="400px" objectFit="cover" />
+              <Image src={img2} alt="Product 2" w="100%" height="400px" objectFit="cover" />
+              <Image src={img3} alt="Product 3" w="100%" height="400px" objectFit="cover" />
+              <Image src={img4} alt="Product 4" w="100%" height="400px" objectFit="cover" />
             </Flex>
           </Flex>
         </Box>
@@ -159,10 +112,10 @@ const Plasma = () => {
                 NÁŠ PLASMOVÝ <br />
                 STROJ:
               </Heading>
-              <Text fontSize="30px" lineHeight="1" fontWeight="bold">
+              <Text fontSize={{ base: "24px", lg: "30px" }} lineHeight="1.2" fontWeight="bold">
                 Pegas 121 od firmy Alfain
               </Text>
-              <Flex fontSize={{ base: "16px",  lg: "17px" }} direction="column">
+              <Flex fontSize={{ base: "18px", lg: "17px" }} direction="column" gap={{ base: "8px", lg: "4px" }}>
                 <Text>
                   Řezání ocelových a nerezových plechů a plechů z barevných kovů
                   o tloušťce 1 - 15 mm
@@ -176,9 +129,10 @@ const Plasma = () => {
               <Image
                 mt="25px"
                 src={plasma}
-                objectFit="cover"
                 width="100%"
-                height="100%"
+                height="auto"
+                objectFit="contain"
+                maxH={{ base: "300px", lg: "none" }}
               />
             </Flex>
           </Flex>

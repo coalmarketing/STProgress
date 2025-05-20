@@ -1,4 +1,4 @@
-import { Text, Flex, Image, Heading, Box } from "@chakra-ui/react";
+import { Text, Flex, Image, Heading, Box, useMediaQuery } from "@chakra-ui/react";
 import HeadingImg from "./HeadingImg";
 import headerPicture from "../images/photos/webp/header_bunky.webp";
 import carIcon from "../images/icons/car.svg";
@@ -14,6 +14,7 @@ import img3 from "../images/photos/webp/galerie_bunky_03.webp";
 import img4 from "../images/photos/webp/galerie_bunky_04.webp";
 
 const BuildBlocks = () => {
+    const [isMobile] = useMediaQuery("(max-width: 768px)");
     const features = [
     { icon: carIcon, text: "Stavební buňky lze snadno a rychle přesunout na jiné místo." },
     { icon: flameIcon, text: "Sendvičové panely s izolací  zajišťují v buňkách tepelný komfort v každém ročním období." },
