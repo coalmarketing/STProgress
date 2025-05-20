@@ -1,4 +1,5 @@
 import { Flex, Heading, Box } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 
 interface IProps {
     img: string;
@@ -11,6 +12,31 @@ interface IProps {
 }
 
 const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
+    const [isVideoVisible, setIsVideoVisible] = useState(false);
+
+    useEffect(() => {
+        if (videoSrc) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            setIsVideoVisible(true);
+                            observer.disconnect();
+                        }
+                    });
+                },
+                { threshold: 0.1 }
+            );
+
+            const element = document.getElementById('video-container');
+            if (element) {
+                observer.observe(element);
+            }
+
+            return () => observer.disconnect();
+        }
+    }, [videoSrc]);
+
     return (
         <Flex
             w="100%"
@@ -23,10 +49,12 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
             backgroundPosition={{ base: "center 0", "2xl": "center -400px" }}
             position="relative"
             py="12"
+            id="video-container"
         >
             {gifSrc ? (
                 <img
                     src={gifSrc}
+                    loading="lazy"
                     style={{
                         position: "absolute",
                         top: 0,
@@ -38,7 +66,7 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
                     }}
                     alt="Background"
                 />
-            ) : videoSrc ? (
+            ) : videoSrc && isVideoVisible ? (
                 <video
                     style={{
                         position: "absolute",
@@ -53,8 +81,10 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
                     muted
                     loop
                     playsInline
-                    preload="auto"
+                    preload="none"
                     poster={img}
+                    disablePictureInPicture
+                    disableRemotePlayback
                 >
                     <source src={videoSrc.webm} type="video/webm" />
                     <source src={videoSrc.mp4} type="video/mp4" />
