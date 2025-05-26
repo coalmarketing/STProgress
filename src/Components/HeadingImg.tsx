@@ -1,5 +1,4 @@
 import { Flex, Heading, Box, useMediaQuery } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
 
 interface IProps {
     img: string;
