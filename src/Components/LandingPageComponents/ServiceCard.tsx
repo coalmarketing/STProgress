@@ -49,7 +49,7 @@ const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardT
               bg={leftAlignment ? "white" : "STProgress.black"}
               pb="3rem">
             
-        <Flex justifyContent="center" w="80%" py="4rem">
+        <Flex justifyContent="center" w="80%" pt={{sm: "4rem", xl: "4rem"}} pb={{sm: "0rem", xl: "0rem"}}>
             <Flex w="100%" direction={shrinkCard ? "column" : leftAlignment ? "row" : "row-reverse"}>
                 {/* Background image container with opacity applied only to the image */}
 

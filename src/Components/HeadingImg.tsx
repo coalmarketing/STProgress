@@ -12,31 +12,7 @@ interface IProps {
 }
 
 const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
-    const [isVideoVisible, setIsVideoVisible] = useState(false);
     const [isMobile] = useMediaQuery("(max-width: 768px)");
-
-    useEffect(() => {
-        if (videoSrc && !isMobile) {
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            setIsVideoVisible(true);
-                            observer.disconnect();
-                        }
-                    });
-                },
-                { threshold: 0.1 }
-            );
-
-            const element = document.getElementById('video-container');
-            if (element) {
-                observer.observe(element);
-            }
-
-            return () => observer.disconnect();
-        }
-    }, [videoSrc, isMobile]);
 
     return (
         <Flex
@@ -50,7 +26,6 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
             backgroundPosition={{ base: "center 0", "2xl": "center -400px" }}
             position="relative"
             py="12"
-            id="video-container"
         >
             {gifSrc ? (
                 <img
@@ -67,7 +42,7 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
                     }}
                     alt="Background"
                 />
-            ) : videoSrc && isVideoVisible && !isMobile ? (
+            ) : videoSrc && !isMobile ? (
                 <video
                     style={{
                         position: "absolute",
@@ -82,7 +57,7 @@ const HeadingImg = ({ img, titleText, videoSrc, gifSrc }: IProps) => {
                     muted
                     loop
                     playsInline
-                    preload="none"
+                    preload="auto"
                     poster={img}
                     disablePictureInPicture
                     disableRemotePlayback

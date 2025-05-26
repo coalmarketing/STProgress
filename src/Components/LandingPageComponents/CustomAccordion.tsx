@@ -13,7 +13,7 @@ interface IProps {
 const CustomAccordion = ({ leftAlignment, handleImageClick, data, fullHeight = true }: IProps) => {
     
     return (
-        <Accordion minH={ fullHeight ? "400px" : "0px" } allowToggle color={leftAlignment ? "black" : "white"}>
+        <Accordion minH={ fullHeight ? "200px" : "0px" } allowToggle color={leftAlignment ? "black" : "white"}>
             {
                 data.map(ac => (
                     <AccordionItem>
