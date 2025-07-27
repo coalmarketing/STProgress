@@ -9,7 +9,7 @@ import CustomBtn from "../CustomBtn";
 import { EButtonStyle } from "../../models/IModels.model";
 import Arrow from "../Arrow/Arrow";
 import bunka2VideoWebm from "../../video/uvodni-video-new.webm";
-import fallbackImage from "../../images/photos/webp/uvodni-foto-new.jpg";
+import fallbackImage from "../../images/photos/webp/uvodni-new.webp";
 import { Link as LinkScroll } from "react-scroll";
 
 const Introduction = () => {
