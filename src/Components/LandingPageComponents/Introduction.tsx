@@ -2,7 +2,6 @@ import {
   Box,
   Flex,
   Heading,
-  Spacer,
   useMediaQuery,
   Image,
 } from "@chakra-ui/react";
@@ -15,8 +14,6 @@ import fallbackImage from "../../images/photos/webp/landing-page.webp";
 import { Link as LinkScroll } from "react-scroll";
 
 const Introduction = () => {
-  const [hidePcIcon] = useMediaQuery("(max-width: 410px)");
-  const [showPcIcon] = useMediaQuery("(max-width: 395px)");
   const [isMobile] = useMediaQuery("(max-width: 768px)");
   return (
     <Box position="relative" width="100%" height="calc(100vh - 90px)">
