@@ -25,37 +25,39 @@ const ContactsImages: React.FC<ContactsImagesProps> = ({ images }) => {
                     <Grid
                         templateColumns={{ base: "1fr", md: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" }}
                         w="100%"
-                        gap={{ base: 5, lg: 10 }}
+                        gap={{ base: 10, lg: 20 }}
                     >
                         {images
                             .filter((image) => image.section === section)
                             .map((image, index) => (
                                 <Flex key={index} w="100%" textAlign="left" direction="column">
-                                    <img 
-                                        src={sectionIndex % 2 === 0 ? profileIcon : profileIconRed} 
-                                        alt="Phone" 
-                                        width="100px" 
-                                    />
-                                    <Flex direction="column" gap={2} mt={5}>
-                                        <Heading fontSize={{ base: "22px", lg: "35px" }} fontWeight="bold">
-                                            {image.heading}
-                                        </Heading>
-                                        <Text fontWeight="bold" fontSize={{ base: "15px", lg: "20px" }} color="STProgress.red">
-                                            {image.position}
-                                        </Text>
-                                        <Flex direction="column" ml={-2}>
-                                            <Flex alignItems="center" gap={1}>
-                                                <img src={callIconRed} alt="Phone" width="50px" />
-                                                <Text>
-                                                    <a href={`tel:${image.phone}`}>{image.phone}</a>
-                                                </Text>
-                                            </Flex>
-                                            <Flex alignItems="center" gap={2}>
-                                                <img src={mailIcon} alt="Mail" width="50px" />
-                                                <Text>
-                                                    <a href={`mailto:${image.mail}`}>{image.mail}</a>
-                                                </Text>
-                                            </Flex>
+                                    <Flex alignItems="flex-start" gap={4}>
+                                        <img 
+                                            src={sectionIndex % 2 === 0 ? profileIcon : profileIconRed} 
+                                            alt="Phone" 
+                                            width="70px" 
+                                        />
+                                        <Flex direction="column" gap={1}>
+                                            <Heading fontSize={{ base: "18px", lg: "24px" }} fontWeight="bold">
+                                                {image.heading}
+                                            </Heading>
+                                            <Text fontWeight="bold" fontSize={{ base: "12px", lg: "16px" }} color="STProgress.red">
+                                                {image.position}
+                                            </Text>
+                                        </Flex>
+                                    </Flex>
+                                    <Flex direction="column" ml={-2} mt={3}>
+                                        <Flex alignItems="center" gap={1}>
+                                            <img src={callIconRed} alt="Phone" width="50px" />
+                                            <Text fontSize={{ base: "14px", lg: "16px" }}>
+                                                <a href={`tel:${image.phone}`}>{image.phone}</a>
+                                            </Text>
+                                        </Flex>
+                                        <Flex alignItems="center" gap={2}>
+                                            <img src={mailIcon} alt="Mail" width="50px" />
+                                            <Text fontSize={{ base: "14px", lg: "16px" }}>
+                                                <a href={`mailto:${image.mail}`}>{image.mail}</a>
+                                            </Text>
                                         </Flex>
                                     </Flex>
                                 </Flex>
