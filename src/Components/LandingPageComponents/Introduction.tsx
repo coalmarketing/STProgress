@@ -8,9 +8,9 @@ import {
 import CustomBtn from "../CustomBtn";
 import { EButtonStyle } from "../../models/IModels.model";
 import Arrow from "../Arrow/Arrow";
-import bunka2VideoMp4 from "../../video/Bunka2.mp4";
-import bunka2VideoWebm from "../../video/Bunka2_low.webm";
-import fallbackImage from "../../images/photos/webp/landing-page.webp";
+import bunka2VideoMp4 from "../../video/uvodni-video-new.mp4";
+import bunka2VideoWebm from "../../video/uvodni-video-new.webm";
+import fallbackImage from "../../images/photos/webp/uvodni-foto-new.jpg";
 import { Link as LinkScroll } from "react-scroll";
 
 const Introduction = () => {

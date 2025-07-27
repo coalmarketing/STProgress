@@ -22,6 +22,7 @@ interface IServiceCardData {
   cardImages: string[];
   applyMaxWidth?: boolean;
   serviceCardTarget?: string;
+  youtubeVideoId?: string;
 }
 
 function LandingPage() {
@@ -33,6 +34,7 @@ function LandingPage() {
             cardTitle: "MONTÁŽ HALY",
             applyMaxWidth: true,
             cardImages: [img01_1, img01_2],
+            youtubeVideoId: "vexcrupOCRQ",
             textChildren: (
                 <>
                     <Box>
@@ -130,6 +132,7 @@ function LandingPage() {
             textChildren={service.textChildren}
             accordionData={service.accordionData}
             applyMaxWidth={service.applyMaxWidth}
+            youtubeVideoId={service.youtubeVideoId}
           />
         ))}
       </Flex>

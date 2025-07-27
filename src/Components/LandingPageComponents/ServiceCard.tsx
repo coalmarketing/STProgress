@@ -1,4 +1,5 @@
 import {
+    Box,
     Flex,
     Heading,
     Image,
@@ -25,9 +26,10 @@ interface IProps {
     cardImages: string[];
     applyMaxWidth?: boolean;
     serviceCardTarget?: string;
+    youtubeVideoId?: string;
 }
 
-const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardTitle, cardImages, applyMaxWidth, serviceCardTarget }: IProps) => {
+const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardTitle, cardImages, applyMaxWidth, serviceCardTarget, youtubeVideoId }: IProps) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [selectedImage, setSelectedImage] = useState("");
     const [shrinkCard] = useMediaQuery("(max-width: 1100px)");
@@ -108,53 +110,77 @@ const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardT
                 <Flex direction="column" pt="90px" w={ shrinkCard ? "100%" : "80%" } alignItems={leftAlignment ? "start" : "end"}>
                     <Flex direction="column" w="100%" p={{ sm: "unset", md: "30px"}} gap="40px">
                         <Flex direction="column" position="relative" mt={4}>
-                            <Image
-                                src={cardImages[0]}
-                                w="70%"
-                                maxH={{ md: "300px", base: "150px" }} 
-                                position="relative"
-                                left={!leftAlignment ? "30%" : "unset"}
-                                zIndex={!leftAlignment ? 1 : 2}
-                                objectFit="cover"
-                                cursor="pointer"
-                                transition="all 0.3s ease-in-out"
-                                _hover={{
-                                    transform: "scale(1.05)",
-                                    boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.3)",
-                                    zIndex: 10
-                                }}
-                                onClick={() => handleImageClick(cardImages[0])}
-                            />
-                          <Image
-                                src={cardImages[1]}
-                                w={{
-                                    base: "50%",
-                                    sm: "60%",
-                                    md: leftAlignment ? "50%" : "70%",
-                                }}
-                                maxH={{ md: "250px", base: "150px" }} 
-                                objectFit="cover"
-                                position="absolute"
-                                top="-50px"
-                                right={!leftAlignment ? "-20%" : "100%"}
-                                left={{
-                                    base: leftAlignment ? "75%" : "20%",
-                                    sm: leftAlignment ? "75%" : "30%",
-                                    md: leftAlignment ? "75%" : "30%",
-                                }}
-                                transform="translateX(-50%)"
-                                zIndex={!leftAlignment ? 2 : 1}
-                                boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)"
-                                cursor="pointer"
-                                transition="all 0.3s ease-in-out"
-                                _hover={{
-                                    transform: "translateX(-50%) scale(1.05)",
-                                    boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.3)",
-                                    zIndex: 10
-                                }}
-                                onClick={() => handleImageClick(cardImages[1])}
-                                />
-
+                            {youtubeVideoId ? (
+                                <Box
+                                    w="100%"
+                                    position="relative"
+                                    zIndex={1}
+                                    sx={{
+                                        aspectRatio: "16/9"
+                                    }}
+                                >
+                                    <iframe
+                                        width="100%"
+                                        height="100%"
+                                        src={`https://www.youtube.com/embed/${youtubeVideoId}?si=DaTHHN-n_kX0b9SJ&autoplay=1&mute=1`}
+                                        title="YouTube video player"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                        style={{ borderRadius: "8px" }}
+                                    />
+                                </Box>
+                            ) : (
+                                <>
+                                    <Image
+                                        src={cardImages[0]}
+                                        w="70%"
+                                        maxH={{ md: "300px", base: "150px" }} 
+                                        position="relative"
+                                        left={!leftAlignment ? "30%" : "unset"}
+                                        zIndex={!leftAlignment ? 1 : 2}
+                                        objectFit="cover"
+                                        cursor="pointer"
+                                        transition="all 0.3s ease-in-out"
+                                        _hover={{
+                                            transform: "scale(1.05)",
+                                            boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.3)",
+                                            zIndex: 10
+                                        }}
+                                        onClick={() => handleImageClick(cardImages[0])}
+                                    />
+                                    <Image
+                                        src={cardImages[1]}
+                                        w={{
+                                            base: "50%",
+                                            sm: "60%",
+                                            md: leftAlignment ? "50%" : "70%",
+                                        }}
+                                        maxH={{ md: "250px", base: "150px" }} 
+                                        objectFit="cover"
+                                        position="absolute"
+                                        top="-50px"
+                                        right={!leftAlignment ? "-20%" : "100%"}
+                                        left={{
+                                            base: leftAlignment ? "75%" : "20%",
+                                            sm: leftAlignment ? "75%" : "30%",
+                                            md: leftAlignment ? "75%" : "30%",
+                                        }}
+                                        transform="translateX(-50%)"
+                                        zIndex={!leftAlignment ? 2 : 1}
+                                        boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)"
+                                        cursor="pointer"
+                                        transition="all 0.3s ease-in-out"
+                                        _hover={{
+                                            transform: "translateX(-50%) scale(1.05)",
+                                            boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.3)",
+                                            zIndex: 10
+                                        }}
+                                        onClick={() => handleImageClick(cardImages[1])}
+                                    />
+                                </>
+                            )}
                         </Flex>
                         <Flex direction="column" fontSize="18px" gap={4}>
                             {accordionData && (
