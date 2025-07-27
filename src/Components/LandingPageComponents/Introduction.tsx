@@ -8,7 +8,6 @@ import {
 import CustomBtn from "../CustomBtn";
 import { EButtonStyle } from "../../models/IModels.model";
 import Arrow from "../Arrow/Arrow";
-import bunka2VideoMp4 from "../../video/uvodni-video-new.mp4";
 import bunka2VideoWebm from "../../video/uvodni-video-new.webm";
 import fallbackImage from "../../images/photos/webp/uvodni-foto-new.jpg";
 import { Link as LinkScroll } from "react-scroll";
@@ -61,7 +60,6 @@ const Introduction = () => {
               }}
             >
               <source src={bunka2VideoWebm} type="video/webm" />
-              <source src={bunka2VideoMp4} type="video/mp4" />
             </video>
           )}
         </Box>
