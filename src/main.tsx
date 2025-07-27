@@ -18,7 +18,7 @@ const theme = extendTheme({
 		}
 	},
 	fonts: {
-		heading: "'Tourney', sans-serif",
+		heading: "'IBMPlexSans', sans-serif",
 		body: "'IBMPlexSans', sans-serif",
 	},
 	breakpoints: {

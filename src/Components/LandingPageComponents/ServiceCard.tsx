@@ -116,6 +116,14 @@ const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardT
                                 left={!leftAlignment ? "30%" : "unset"}
                                 zIndex={!leftAlignment ? 1 : 2}
                                 objectFit="cover"
+                                cursor="pointer"
+                                transition="all 0.3s ease-in-out"
+                                _hover={{
+                                    transform: "scale(1.05)",
+                                    boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.3)",
+                                    zIndex: 10
+                                }}
+                                onClick={() => handleImageClick(cardImages[0])}
                             />
                           <Image
                                 src={cardImages[1]}
@@ -137,6 +145,14 @@ const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardT
                                 transform="translateX(-50%)"
                                 zIndex={!leftAlignment ? 2 : 1}
                                 boxShadow="0px 4px 8px rgba(0, 0, 0, 0.2)"
+                                cursor="pointer"
+                                transition="all 0.3s ease-in-out"
+                                _hover={{
+                                    transform: "translateX(-50%) scale(1.05)",
+                                    boxShadow: "0px 8px 25px rgba(0, 0, 0, 0.3)",
+                                    zIndex: 10
+                                }}
+                                onClick={() => handleImageClick(cardImages[1])}
                                 />
 
                         </Flex>

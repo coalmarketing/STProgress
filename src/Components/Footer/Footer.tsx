@@ -74,11 +74,11 @@ const Footer = () => {
         </Flex>
       </Flex>
       <Flex bg="black" color="white" padding="20px" justifyContent="center" textAlign="center">
-          <Text textAlign="center">© 2024 STAVEBNÍ PROGRESS a.s. Všechna práva vyhrazena</Text>
+          <Text textAlign="center">© {new Date().getFullYear()} STAVEBNÍ PROGRESS a.s. Všechna práva vyhrazena</Text>
       </Flex>
       <Flex justify="center" padding="10px" >
         <Text fontSize="sm" textAlign="center" fontWeight="bold" >
-          Developed with <span style={{ color: "red" }}>❤</span> by <a href="https://coalfamily.cz" target="_blank" rel="noopener noreferrer">Coalfamily</a> | © 2024
+          Developed with <span style={{ color: "red" }}>❤</span> by <a href="https://coalfamily.cz" target="_blank" rel="noopener noreferrer">Coalfamily</a> | © {new Date().getFullYear()}
         </Text>
       </Flex>
     </Flex>

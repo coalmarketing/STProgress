@@ -106,7 +106,7 @@ const HallAssembly = () => {
                 }}
             />
             <Flex w="80%" direction="column">
-                <KeyFeatures headingText={<Text>NA MONTÁŽ HALY<br></br>JSME TI PRAVÍ...</Text>} features={features} />
+                <KeyFeatures headingText={<Text fontSize={{ base: "25px", lg: "35px" }}>NA MONTÁŽ HALY<br></br>JSME TI PRAVÍ...</Text>} features={features} />
                 <ProjectCard
                     cardTitle={latestProject.cardTitle}
                     headingText="PŘESVĚDČTE SE SAMI:"

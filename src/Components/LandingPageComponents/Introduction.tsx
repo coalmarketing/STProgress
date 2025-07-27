@@ -12,166 +12,148 @@ import Arrow from "../Arrow/Arrow";
 import bunka2VideoMp4 from "../../video/Bunka2.mp4";
 import bunka2VideoWebm from "../../video/Bunka2_low.webm";
 import fallbackImage from "../../images/photos/webp/landing-page.webp";
+import { Link as LinkScroll } from "react-scroll";
 
 const Introduction = () => {
   const [hidePcIcon] = useMediaQuery("(max-width: 410px)");
   const [showPcIcon] = useMediaQuery("(max-width: 395px)");
   const [isMobile] = useMediaQuery("(max-width: 768px)");
   return (
-    <Flex
-      width="100%"
-      direction="column"
-      align="center"
-      backgroundColor="black"
-      height={{ base: "calc(100vh - 90px)", md: "calc(100vh - 90px)" }}
-    >
-      {/* HEADER DIV */}
-      <Flex direction="column" alignItems="center" justifyContent="center">
+    <Box position="relative" width="100%" height="calc(100vh - 90px)">
       <Flex
         width="100%"
-        height={{ base: "40vh", md: "60vh", xl: "60vh" }}
-        justifyContent="center"
-        alignItems="center"
+        height="100%"
+        direction="column"
+        align="center"
+        backgroundColor="black"
         position="relative"
         overflow="hidden"
-        _before={{
-          content: '""',
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          bg: "rgba(0, 0, 0, 0.5)",
-          zIndex: 1,
-        }}
+        maxHeight="calc(100vh - 90px)"
       >
-        {isMobile ? (
-          <Image
-            src={fallbackImage}
-            alt="STProgress"
-            position="absolute"
-            width="100%"
-            height="100%"
-            objectFit="cover"
-            filter="brightness(0.7)"
-          />
-        ) : (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            style={{
-              position: "absolute",
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              filter: "brightness(0.7)",
-            }}
-          >
-            <source src={bunka2VideoWebm} type="video/webm" />
-            <source src={bunka2VideoMp4} type="video/mp4" />
-          </video>
-        )}
-         <Heading
-          width="80%"
-          fontSize="clamp(25px, 10vw, 200px)" // Dynamické nastavení velikosti
-          color="white"
-          textAlign="start"
-          lineHeight={1}
-          zIndex={2}
-          filter="brightness(1.2)"
+        {/* VIDEO BACKGROUND */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          width="100%"
+          height="100%"
+          zIndex={0}
+          overflow="hidden"
         >
-          STAVBY PRO BUDOUCNOST.
-        </Heading>
-
-        </Flex>
-      </Flex>
-
-      <Flex
-        w={{ base: "90%", md: "80%", lg: "80%" }}
-        height="100%"
-        direction={{ base: "column", md: "row" }}
-        alignItems="center"
-      >
-        <Flex
-          direction="column"
-          maxW={{ base: "100%", md: "100%", lg: "100%" }}
-          gap={6}
-          mb={{ base: "50px", md: "100px", xl: "170px", '2xl': "100px" }}
-        >
-          <Flex mt={{ base: "100px", md: "20px", sm: "20px" }} lineHeight={1.2} color="white">
-            <Heading
-              fontSize={{ base: "22px", sm: "26px", md: "26x", lg: "29px", xl: "33px" }}
+          {isMobile ? (
+            <Image
+              src={fallbackImage}
+              alt="STProgress"
+              width="100%"
+              height="100%"
+              objectFit="cover"
+              filter="brightness(0.7)"
+            />
+          ) : (
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                filter: "brightness(0.7)",
+                maxHeight: "calc(100vh - 90px)",
+              }}
             >
-              STAVÍME FUNKČNÍ HALY<br></br>A POSKYTUJEME STAVEBNÍ<br></br>ŘEŠENÍ
-              PRO 21. STOLETÍ
-            </Heading>
-          </Flex>
-          <Flex gap={4} wrap={{ base: "wrap", md: "nowrap" }} mb={{ base: "-100px", md: "20px" }}>
-            <CustomBtn
-              to="/reference"
-              text="Předešlé projekty"
-              btnStyle={EButtonStyle.secondaryDark}
-            />
-            <CustomBtn
-              to="/"
-              text="Více..."
-              isScroller={true}
-              scrollTarget="montaz-haly"
-              btnStyle={EButtonStyle.secondaryDark}
-            />
-            {showPcIcon && (
-              <Flex
-                justify="center"
-                align="end"
-                h="100%"
-                width="30%"
-                mt="-45px"
-                ml="30px"
-              >
-                <Arrow></Arrow>
-              </Flex>
-            )}
-          </Flex>
-        </Flex>
+              <source src={bunka2VideoWebm} type="video/webm" />
+              <source src={bunka2VideoMp4} type="video/mp4" />
+            </video>
+          )}
+        </Box>
 
-        {!hidePcIcon && (
-          <Flex
-            justify="center"
-            align="end"
-            h="100%"
-            mb={{ sm: "60px", lg: "90px", xl: "120px" }}
-            width="30%"
-          >
-            <Arrow></Arrow>
-          </Flex>
-        )}
-        {hidePcIcon && <Spacer />}
+        {/* BLACK GRADIENT OVERLAY */}
+        <Box
+          position="absolute"
+          top={0}
+          left={0}
+          width="100%"
+          height="100%"
+          background="linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%)"
+          zIndex={1}
+        />
 
+        {/* CONTENT */}
         <Flex
-          visibility={{ base: "hidden", md: "visible" }}
-          direction="row"
-          w={{ base: "0", md: "auto" }}
-          height={{
-            base: "calc(40vh - 90px)",
-            xl: "calc(55vh - 90px)",
-            "2xl": "calc(40vh - 10px)",
-          }}
+          width="100%"
+          height="100%"
+          direction="column"
+          alignItems="center"
+          justifyContent="flex-end"
+          pb={{ base: "35%", md: "8%" }}
+          zIndex={2}
+          position="relative"
         >
-          <Box
-            w={{ base: "90px", md: "130px", lg: "150px" }}
-            h="100%"
-            bg="STProgress.red"
-          ></Box>
-          <Box
-            w={{ base: "90px", md: "130px", lg: "150px" }}
-            h="100%"
-            bg="STProgress.gray"
-          ></Box>
+          <Flex
+            w={{ base: "90%", md: "80%", lg: "80%" }}
+            direction={{ base: "column", md: "row" }}
+            alignItems={{ base: "center", md: "center" }}
+            gap={6}
+          >
+            <Flex
+              direction="column"
+              maxW={{ base: "100%", md: "100%", lg: "100%" }}
+              gap={6}
+              alignItems={{ base: "center", md: "flex-start" }}
+            >
+              <Heading
+                width="100%"
+                fontSize="clamp(15px, 6vw, 80px)" // Větší text
+                color="white"
+                textAlign={{ base: "center", md: "start" }}
+                lineHeight={1.2}
+              >
+                STAVÍME FUNKČNÍ HALY<br></br>A POSKYTUJEME STAVEBNÍ<br></br>ŘEŠENÍ PRO 21. STOLETÍ
+              </Heading>
+              
+              <Flex 
+                gap={4} 
+                direction={{ base: "column", md: "row" }}
+                width={{ base: "auto", md: "auto" }}
+                justifyContent={{ base: "center", md: "flex-start" }}
+                alignItems={{ base: "center", md: "flex-start" }}
+              >
+                <CustomBtn
+                  to="/reference"
+                  text="Předešlé projekty"
+                  btnStyle={EButtonStyle.secondaryDark}
+                />
+                <CustomBtn
+                  to="/"
+                  text="Více..."
+                  isScroller={true}
+                  scrollTarget="montaz-haly"
+                  btnStyle={EButtonStyle.secondaryDark}
+                />
+              </Flex>
+            </Flex>
+          </Flex>
         </Flex>
       </Flex>
-    </Flex>
+
+      {/* ARROW AT BOTTOM CENTER - OUTSIDE VIDEO CONTAINER */}
+      <LinkScroll to="montaz-haly" smooth offset={-100}>
+        <Flex
+          position="absolute"
+          bottom="20px"
+          left="50%"
+          transform="translateX(-50%)"
+          zIndex={10}
+          justify="center"
+          align="center"
+          cursor="pointer"
+        >
+          <Arrow />
+        </Flex>
+      </LinkScroll>
+    </Box>
   );
 };
 

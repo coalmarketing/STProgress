@@ -44,7 +44,7 @@ const Plasma = () => {
         <Flex w="80%" direction="column" mb="50px">
           <KeyFeatures
             headingText={
-              <Text>
+              <Text fontSize={{ base: "25px", lg: "35px" }}>
                 NABÍZÍME RYCHLÉ A PRECIZNÍ
                 <br />
                 PLASMOVÉ DĚLENÍ VŠECH KOVŮ...

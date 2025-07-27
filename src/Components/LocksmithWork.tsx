@@ -98,7 +98,7 @@ const LocksmithWork = () => {
                 }}
             />
             <Flex w="80%" direction="column">
-                <KeyFeatures headingText={<Text>UDĚLÁME VÁM ZÁMEČNICKÉ<br></br>VÝROBKY NA MÍRU...</Text>} features={features} />
+                <KeyFeatures headingText={<Text fontSize={{ base: "25px", lg: "35px" }}>UDĚLÁME VÁM ZÁMEČNICKÉ<br></br>VÝROBKY NA MÍRU...</Text>} features={features} />
                 <ProjectTimeLine steps={projectSteps} />
             </Flex>
             <Plasma/>

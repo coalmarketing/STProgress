@@ -33,7 +33,7 @@ const BuildBlocks = () => {
                     }}
                 />
                 <Flex w="80%" direction="column" mb="50px">
-                    <KeyFeatures headingText={<Text>ZAŘÍDÍME STAVEBNÍ BUŇKY NA MÍRU<br />OD PROJEKTU PO KOMFORTNÍ ZÁZEMÍ...</Text>} features={features} />
+                    <KeyFeatures headingText={<Text fontSize={{ base: "25px", lg: "35px" }}>ZAŘÍDÍME STAVEBNÍ BUŇKY NA MÍRU<br />OD PROJEKTU PO KOMFORTNÍ ZÁZEMÍ...</Text>} features={features} />
                 </Flex>
 
                 <Heading fontSize={{ base: "35px", lg: "55px" }} textAlign="left" w="80%" mt="10px">

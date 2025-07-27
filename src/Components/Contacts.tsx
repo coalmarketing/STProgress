@@ -203,7 +203,7 @@ const Contacts = () => {
                 </Flex>
             </Flex>
             <Flex w="80%" mt="50px" mx="auto">
-                <KeyFeatures headingText={<Text>NAŠI ZÁKAZNÍCI ODCHÁZEJÍ<br></br>SPOKOJENÍ A S RADOSTÍ SE VRACÍ.</Text>} features={features} />
+                <KeyFeatures headingText={<Text fontSize={{ base: "25px", lg: "35px" }}>NAŠI ZÁKAZNÍCI ODCHÁZEJÍ<br></br>SPOKOJENÍ A S RADOSTÍ SE VRACÍ.</Text>} features={features} />
             </Flex>
             
             <Flex w="80%" mt="50px" mx="auto" direction="column">
