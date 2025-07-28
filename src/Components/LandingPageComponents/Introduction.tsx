@@ -55,7 +55,7 @@ const Introduction = () => {
                 width: "100%",
                 height: "100%",
                 objectFit: "cover",
-                filter: "brightness(0.7)",
+                filter: "brightness(1)",
                 maxHeight: "calc(100vh - 90px)",
               }}
             >
@@ -71,7 +71,7 @@ const Introduction = () => {
           left={0}
           width="100%"
           height="100%"
-          background="linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.6) 50%, transparent 100%)"
+          background="linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%)"
           zIndex={1}
         />
 
