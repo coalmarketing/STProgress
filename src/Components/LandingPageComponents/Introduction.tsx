@@ -82,7 +82,7 @@ const Introduction = () => {
           direction="column"
           alignItems="center"
           justifyContent="flex-end"
-          pb={{ base: "35%", md: "8%" }}
+          pb={{ base: "100px", md: "8%" }}
           zIndex={2}
           position="relative"
         >
