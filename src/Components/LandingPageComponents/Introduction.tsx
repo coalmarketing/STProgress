@@ -101,7 +101,7 @@ const Introduction = () => {
             >
               <Heading
                 width="100%"
-                fontSize="clamp(12px, 4.5vw, 80px)" // Menší text pro mobil
+                fontSize="clamp(20px, 6vw, 90px)" // Menší text pro mobil
                 color="white"
                 textAlign={{ base: "center", md: "start" }}
                 lineHeight={1.1}
