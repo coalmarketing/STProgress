@@ -11,6 +11,7 @@ import img03_1 from "../images/photos/webp/foto_03_front.webp";
 import img03_2 from "../images/photos/webp/foto_03_back.webp";
 import img04_2 from "../images/photos/webp/foto_04_uprostred.webp";
 import img04_3 from "../images/photos/webp/foto_04_vpravo.webp";
+import uvodniNew from "../images/photos/webp/uvodni-new.webp";
 import { projectPropsList } from "./Projects";
 
 interface IServiceCardData {
@@ -34,7 +35,7 @@ function LandingPage() {
             cardTitle: "MONTÁŽ HALY",
             applyMaxWidth: true,
             cardImages: [img01_1, img01_2],
-            youtubeVideoId: "vexcrupOCRQ",
+            youtubeVideoId: "I1AzCupMxus",
             textChildren: (
                 <>
                     <Box>
@@ -121,19 +122,32 @@ function LandingPage() {
   return (
       <Flex direction="column" alignItems="center" gap={0}>
         <Introduction />
-        {servicesData.map((service) => (
-          <ServiceCard
-            serviceCardTarget={service.serviceCardTarget || ""}
-            cardImages={service.cardImages}
-            cardTitle={service.cardTitle}
-            key={service.cardNumber}
-            alignment={service.alignment}
-            cardNumber={service.cardNumber}
-            textChildren={service.textChildren}
-            accordionData={service.accordionData}
-            applyMaxWidth={service.applyMaxWidth}
-            youtubeVideoId={service.youtubeVideoId}
-          />
+        {servicesData.map((service, index) => (
+          <Flex key={service.cardNumber} direction="column" w="100%">
+            <ServiceCard
+              serviceCardTarget={service.serviceCardTarget || ""}
+              cardImages={service.cardImages}
+              cardTitle={service.cardTitle}
+              alignment={service.alignment}
+              cardNumber={service.cardNumber}
+              textChildren={service.textChildren}
+              accordionData={service.accordionData}
+              applyMaxWidth={service.applyMaxWidth}
+              youtubeVideoId={service.youtubeVideoId}
+            />
+            {index === 0 && (
+              <Flex w="100%" justify="center">
+                <Box
+                  as="img"
+                  src={uvodniNew}
+                  alt="STProgress"
+                  w="100%"
+                  h={{ base: "350px", md: "70vh" }}
+                  objectFit="cover"
+                />
+              </Flex>
+            )}
+          </Flex>
         ))}
       </Flex>
   );

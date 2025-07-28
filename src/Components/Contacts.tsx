@@ -14,7 +14,7 @@ import checkIcon from "../images/icons/check.svg";
 import text1 from "../images/photos/webp/foto_hala1.webp";
 import text2 from "../images/photos/webp/foto_hala2.webp";
 import { useEffect } from "react";
-import contactsGif from "../video/gif.gif";
+import contactsGif from "../images/photos/webp/uvodni-new.webp";
 
 
 const Contacts = () => {
@@ -41,7 +41,7 @@ const Contacts = () => {
             section: 1
         },
         {
-            heading: "ROMAN KOSTROŇ",
+            heading: "ROMAN KOSTROŇ, Dis.",
             position: "Projektový manažer",
             phone: "+420 724 161 668",
             mail: "kostron@stprogress.cz",
