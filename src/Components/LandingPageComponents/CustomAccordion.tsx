@@ -15,8 +15,8 @@ const CustomAccordion = ({ leftAlignment, handleImageClick, data, fullHeight = t
     return (
         <Accordion minH={ fullHeight ? "200px" : "0px" } allowToggle color={leftAlignment ? "black" : "white"}>
             {
-                data.map(ac => (
-                    <AccordionItem>
+                data.map((ac, index) => (
+                    <AccordionItem key={`accordion-item-${index}`}>
                         {({ isExpanded }) => (
                             <>
                                 <Text>
@@ -35,8 +35,16 @@ const CustomAccordion = ({ leftAlignment, handleImageClick, data, fullHeight = t
                                         {ac.text}
                                     </Text>
                                     <Flex mt={3} gap={2}>
-                                        {ac.pictures.map(pict => (
-                                            <Image src={pict} boxSize={{ md: "35%", base: "50%" }} objectFit="cover" h="120px" onClick={() => handleImageClick(pict)} cursor="pointer" />
+                                        {ac.pictures.map((pict, pictIndex) => (
+                                            <Image 
+                                                key={`accordion-image-${index}-${pictIndex}`}
+                                                src={pict} 
+                                                boxSize={{ md: "35%", base: "50%" }} 
+                                                objectFit="cover" 
+                                                h="120px" 
+                                                onClick={() => handleImageClick(pict)} 
+                                                cursor="pointer" 
+                                            />
                                         ))}
                                     </Flex>
                                 </AccordionPanel>

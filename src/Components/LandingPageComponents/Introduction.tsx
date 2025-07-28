@@ -4,6 +4,7 @@ import {
   Heading,
   useMediaQuery,
   Image,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import CustomBtn from "../CustomBtn";
 import { EButtonStyle } from "../../models/IModels.model";
@@ -14,6 +15,7 @@ import { Link as LinkScroll } from "react-scroll";
 
 const Introduction = () => {
   const [isMobile] = useMediaQuery("(max-width: 768px)");
+  const [isShortHeight] = useMediaQuery("(max-height: 600px)");
   return (
     <Box position="relative" width="100%" height="calc(100vh - 90px)">
       <Flex
@@ -82,7 +84,7 @@ const Introduction = () => {
           direction="column"
           alignItems="center"
           justifyContent="flex-end"
-          pb={{ base: "100px", md: "8%" }}
+          pb={{ base: isShortHeight ? "80px" : "150px", md: "8%" }}
           zIndex={2}
           position="relative"
         >
@@ -100,34 +102,36 @@ const Introduction = () => {
             >
               <Heading
                 width="100%"
-                fontSize="clamp(15px, 6vw, 80px)" // Větší text
+                fontSize="clamp(12px, 4.5vw, 80px)" // Menší text pro mobil
                 color="white"
                 textAlign={{ base: "center", md: "start" }}
-                lineHeight={1.2}
+                lineHeight={1.1}
               >
                 STAVÍME FUNKČNÍ HALY<br></br>A POSKYTUJEME STAVEBNÍ<br></br>ŘEŠENÍ PRO 21. STOLETÍ
               </Heading>
               
-              <Flex 
-                gap={4} 
-                direction={{ base: "column", md: "row" }}
-                width={{ base: "auto", md: "auto" }}
-                justifyContent={{ base: "center", md: "flex-start" }}
-                alignItems={{ base: "center", md: "flex-start" }}
-              >
-                <CustomBtn
-                  to="/reference"
-                  text="Předešlé projekty"
-                  btnStyle={EButtonStyle.secondaryDark}
-                />
-                <CustomBtn
-                  to="/"
-                  text="Více..."
-                  isScroller={true}
-                  scrollTarget="montaz-haly"
-                  btnStyle={EButtonStyle.secondaryDark}
-                />
-              </Flex>
+              {!isShortHeight && (
+                <Flex 
+                  gap={4} 
+                  direction={{ base: "column", md: "row" }}
+                  width={{ base: "auto", md: "auto" }}
+                  justifyContent={{ base: "center", md: "flex-start" }}
+                  alignItems={{ base: "center", md: "flex-start" }}
+                >
+                  <CustomBtn
+                    to="/reference"
+                    text="Předešlé projekty"
+                    btnStyle={EButtonStyle.secondaryDark}
+                  />
+                  <CustomBtn
+                    to="/"
+                    text="Více..."
+                    isScroller={true}
+                    scrollTarget="montaz-haly"
+                    btnStyle={EButtonStyle.secondaryDark}
+                  />
+                </Flex>
+              )}
             </Flex>
           </Flex>
         </Flex>

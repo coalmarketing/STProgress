@@ -14,7 +14,7 @@ const Formular = () => {
       backgroundPosition="center"
       pt="100px"
     >
-      <Flex id="contact-form" direction="column" align="center" justify="center" w={{ base: "90%", xl: "60%" }}>
+      <Flex id="contact-form" direction="column" align="center" justify="center" w={{ base: "90%", xl: "60%" }} >
         <Flex w="100%" bg="white" direction="column" p={10}>
           <Heading fontSize={{ base: "35px", lg: "58px"}} color="STProgress.red" mb={4}>
             POJĎME POSTAVIT
@@ -30,6 +30,7 @@ const Formular = () => {
             style={{ border: "0" }}
             title="Kontaktní formulář"
             aria-label="Kontaktní formulář"
+
           ></iframe>
           <Flex gap={{ base: 2, lg: 6 }} direction={{ base: "column", lg: "row" }}>
             <Flex alignItems="center">

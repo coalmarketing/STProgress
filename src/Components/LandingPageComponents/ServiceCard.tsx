@@ -86,19 +86,24 @@ const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardT
                             </Heading>
                         </Flex>
                         <Flex color={leftAlignment ? "black" : "white"} direction="column" fontSize={{ md: "20px", lg: "16px", xl: "18px" }}fontWeight="medium" gap={4}>
-                            {textChildren}
+                            {Array.isArray(textChildren) ? 
+                                textChildren.map((child, index) => (
+                                    <div key={`text-child-${index}`}>{child}</div>
+                                )) : 
+                                textChildren
+                            }
                         </Flex>
     
                         <Flex gap={columnButtons ? 3 : 8} direction={columnButtons ? "column" : "row"}>
                             {leftAlignment ? (
                                 <>
-                                    <CustomBtn  to={"/" + serviceCardTarget} text="Více..." btnStyle={EButtonStyle.primaryLight} />
-                                    <CustomBtn scrollTarget="contact-form" isScroller={true} text="Konzultujte s námi" btnStyle={EButtonStyle.secondaryLight} />
+                                    <CustomBtn key="btn-more-light" to={"/" + serviceCardTarget} text="Více..." btnStyle={EButtonStyle.primaryLight} />
+                                    <CustomBtn key="btn-consult-light" scrollTarget="contact-form" isScroller={true} text="Konzultujte s námi" btnStyle={EButtonStyle.secondaryLight} />
                                 </>
                             ) : (
                                 <>
-                                    <CustomBtn to={"/" + serviceCardTarget} text="Více..." btnStyle={EButtonStyle.primaryDark} />
-                                    <CustomBtn scrollTarget="contact-form" isScroller={true} text="Konzultujte s námi" btnStyle={EButtonStyle.secondaryDark} />
+                                    <CustomBtn key="btn-more-dark" to={"/" + serviceCardTarget} text="Více..." btnStyle={EButtonStyle.primaryDark} />
+                                    <CustomBtn key="btn-consult-dark" scrollTarget="contact-form" isScroller={true} text="Konzultujte s námi" btnStyle={EButtonStyle.secondaryDark} />
                                 </>
                             )}
                         </Flex>
@@ -134,6 +139,7 @@ const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardT
                             ) : (
                                 <>
                                     <Image
+                                        key="card-image-1"
                                         src={cardImages[0]}
                                         w="70%"
                                         maxH={{ md: "300px", base: "150px" }} 
@@ -151,6 +157,7 @@ const ServiceCard = ({ textChildren, cardNumber, alignment, accordionData, cardT
                                         onClick={() => handleImageClick(cardImages[0])}
                                     />
                                     <Image
+                                        key="card-image-2"
                                         src={cardImages[1]}
                                         w={{
                                             base: "50%",
