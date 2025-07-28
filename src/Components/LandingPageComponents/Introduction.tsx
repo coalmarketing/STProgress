@@ -4,7 +4,6 @@ import {
   Heading,
   useMediaQuery,
   Image,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import CustomBtn from "../CustomBtn";
 import { EButtonStyle } from "../../models/IModels.model";
